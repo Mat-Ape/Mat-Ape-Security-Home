@@ -1,0 +1,87 @@
+/* =========================
+   Intro Landing Overlay
+========================= */
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #050805;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: all 0.8s ease;
+  overflow: hidden;
+  transform: none;
+}
+
+#matrix-bg {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.intro-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.intro-content h1 {
+  font-size: 3rem;
+  color: #39ff14;
+  text-shadow:
+    0 0 10px #39ff14,
+    0 0 25px rgba(57, 255, 20, 0.35);
+  margin-bottom: 15px;
+}
+
+.intro-content p {
+  color: #c8c8c8;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+#enter-site {
+  background: transparent;
+  border: 2px solid #39ff14;
+  color: #39ff14;
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+#enter-site:hover {
+  background: rgba(57, 255, 20, 0.08);
+  box-shadow:
+    0 0 15px rgba(57, 255, 20, 0.25),
+    0 0 30px rgba(57, 255, 20, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Exit animation */
+
+#intro-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.03);
+}
+
+
+

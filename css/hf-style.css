@@ -1,0 +1,246 @@
+/* ===== Base ===== */
+
+* {
+  cursor: none !important;
+}
+
+.hf-page {
+  background: #0b0f0b;
+  color: #C8C8C8;
+  padding: 80px 10%;
+}
+
+.hf-section {
+  margin-top: 80px;
+}
+
+h1, h2, h3 {
+  color: #39FF14;
+  font-weight: 600;
+}
+
+.hf-subtitle {
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* ===== Chips ===== */
+.hf-chips {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hf-chips span {
+  background: rgba(57, 255, 20, 0.08);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* ===== Metrics Cards ===== */
+.hf-metrics {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.hf-card {
+  background: rgba(57, 255, 20, 0.06);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(57, 255, 20, 0.12);
+}
+
+.hf-card .label {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.hf-card .value {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.hf-card .note {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ===== Philosophy ===== */
+.hf-text {
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.hf-list {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+/* ===== Split ===== */
+.hf-split {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+}
+
+/* ===== Progress Bars ===== */
+.hf-progress {
+  margin-top: 25px;
+}
+
+.progress-row {
+  margin-bottom: 25px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.bar {
+  height: 6px;
+  background: #1a1f1a;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #39FF14;
+}
+
+/* ===== Optimization ===== */
+.hf-optim {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+}
+
+/* ===== Log ===== */
+.hf-log {
+  margin-top: 25px;
+}
+
+.log-entry {
+  border-left: 2px solid #39FF14;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+#progress-photos {
+    margin-top: 40px;
+}
+
+.progress-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.progress-item {
+    flex: 1 1 300px;
+    background-color: #111;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.progress-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/*BMR Calc*/
+.bmr-calculator {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: minmax(280px, 2fr) minmax(220px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.bmr-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  padding: 24px;
+  border-radius: 14px;
+  background: rgba(57, 255, 20, 0.04);
+  border: 1px solid rgba(57, 255, 20, 0.12);
+}
+
+.bmr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bmr-field label {
+  color: #c8c8c8;
+  font-size: 0.9rem;
+}
+
+.bmr-field input,
+.bmr-field select {
+  background: #111;
+  color: #c8c8c8;
+  border: 1px solid rgba(57, 255, 20, 0.18);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: inherit;
+}
+
+#bmr-calc-btn {
+  align-self: end;
+  background: transparent;
+  color: #39ff14;
+  border: 1px solid #39ff14;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-family: inherit;
+  font-weight: bold;
+  transition: 0.25s ease;
+}
+
+#bmr-calc-btn:hover {
+  background: rgba(57, 255, 20, 0.08);
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.18);
+}
+
+.bmr-result-card {
+  background: rgba(57, 255, 20, 0.06);
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(57, 255, 20, 0.12);
+}
+
+#bmr-result {
+  font-size: 2rem;
+  color: #fff;
+  margin: 8px 0;
+}
+
+#bmr-note {
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .bmr-calculator {
+    grid-template-columns: 1fr;
+  }
+}

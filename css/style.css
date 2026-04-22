@@ -1,0 +1,187 @@
+/* ==============================
+   MatApeSecurity
+   ============================== */
+
+/*Add display flex to terminal box to fill page*/
+
+* {
+  cursor: none !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  
+  background-color: #0b0f0b;
+  color: #39ff14;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.6;
+  min-height: auto;
+/*removed   display: flex;
+  flex-direction: column;*/
+  cursor: none;
+}
+
+/* Header and blinking animation */
+header {
+  text-align: center;
+  padding: 20px;
+  background-image: url("images/grid.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+h1 {
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #39ff14;
+}
+
+/* Navigation */
+nav {
+  background-color: #111;
+  padding: 12px 20px;
+  border: 1px solid #39ff14;
+  border-radius: 8px;
+  margin: 0 20px 20px;
+}
+
+nav a {
+  display: inline-block;
+  color: #39ff14;
+  text-decoration: none;
+  padding: 8px 14px;
+  margin: 0;
+  font-weight: bold;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    text-shadow 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/*Uses sudo class for higlight/underline effect*/
+nav a:hover {
+  text-decoration: none;
+  text-shadow: 0 0 5px #39ff14;
+  background: rgba(57, 255, 20, 0.08);
+  border-color: rgba(57, 255, 20, 0.25);
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.12);
+}
+
+nav a.active {
+  color: #0b0f0b;
+  background: #39ff14;
+  border-color: #39ff14;
+  text-shadow: none;
+  box-shadow: 0 0 14px rgba(57, 255, 20, 0.22);
+}
+
+/* Main Content w/ display flex to fix rendering issue */
+main {
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid #39ff14;
+  font-size: 0.9em;
+  background-image: url("images/grid.jpg"); /*figure out grid display properly*/
+  background-size: cover;
+  background-position: center;
+}
+
+/* construction placeholder */
+.terminal-box {
+  border: 2px solid #39ff14;
+  padding: 20px;
+  margin: 0;
+  flex: 1;
+}
+
+
+
+/* ===== Custom Cursor ===== */
+.custom-cursor {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #39ff14;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 100000;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 8px #39ff14,
+    0 0 15px rgba(57, 255, 20, 0.5),
+    0 0 25px rgba(57, 255, 20, 0.25);
+  background: rgba(57, 255, 20, 0.08);
+  backdrop-filter: blur(2px);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    transform 0.05s linear;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  nav {
+    margin: 0 12px 16px;
+    padding: 10px 12px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  nav a {
+    padding: 7px 10px;
+    font-size: 0.92rem;
+  }
+
+}
