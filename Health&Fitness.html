@@ -173,15 +173,22 @@
       </div>
 
       <div>
-        <h3>Nutrition</h3>
-        <ul>
-          <li>BMR: 2,741</li>
-          <li>Protein: 274g</li>
-          <li>Carbs: 274g</li>
-          <li>Fat: 61g</li>
-        </ul>
-      </div>
+          <h3>Nutrition</h3>
+      <ul>
+        <li>Calories: <span id="terra-calories">NO DATA</span></li>
+        <li>Protein: <span id="terra-protein">NO DATA</span></li>
+        <li>Carbs: <span id="terra-carbs">NO DATA</span></li>
+        <li>Fat: <span id="terra-fat">NO DATA</span></li>
+      </ul>
+    </div>
 
+<section class="hf-section">
+  <h2>Connected Data</h2>
+  <p class="hf-text">Sync nutrition data from MyFitnessPal through Terra.</p>
+  <button type="button" id="terra-connect-btn">Connect MyFitnessPal</button>
+  <p class="hf-text" id="terra-status">Not connected</p>
+</section>
+        
       <div>
         <h3>Recovery</h3>
         <ul>
@@ -236,11 +243,12 @@
   <section class="hf-section">
     <h2>System Log</h2>
 
-    <div class="hf-log">
-      <div class="log-entry">
-        <span class="date">2026-02-16</span>
-        <p>Pull Day — Rows + Pullups</p>
-      </div>
+    <div class="hf-log" id="terra-log">
+  <div class="log-entry">
+    <span class="date">2026-02-16</span>
+    <p>Pull Day — Rows + Pullups</p>
+  </div>
+</div>
 
       <div class="log-entry">
         <span class="date">2026-02-14</span>
@@ -287,5 +295,7 @@
 <script src="javascript/main.js"></script>
 <script src="javascript/bmr.js"></script>
 
+<script src="javascript/terra.js"></script>
+    
 </body>
 </html>
