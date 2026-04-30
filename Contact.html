@@ -20,12 +20,12 @@
     <nav>
     <div class="nav-links">
         <a href="index.html">Index</a>
-        <a href="Me.html">Me</a>
+        <a href="me.html">Me</a>
         <a href="Health&Fitness.html">Health & Fitness</a>
-        <a href="Projects.html">Projects</a>
+        <a href="projects.html">Projects</a>
         <a href="News.html">News</a>
-        <a href="Achievements.html">Achievements</a>
-        <a href="Contact.html" class="active">Contact</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="contact.html" class="active">Contact</a>
     </div>
     </nav>
 
@@ -60,6 +60,21 @@
 
 </section>
 
+<section class="contact-form-section">
+  <h2>Secure Contact</h2>
+  <p>Authorized users only.</p>
+
+  <div class="joke-form">
+    <input type="text" id="joke-name" placeholder="Name">
+    <input type="email" id="joke-email" placeholder="Email">
+    <input type="text" id="joke-message" placeholder="Message">
+
+    <button id="secret-btn">Transmit</button>
+
+    <p id="joke-output"></p>
+  </div>
+</section>
+
     </main>
 
     <footer>
@@ -68,6 +83,65 @@
 
 <div class="custom-cursor"></div>
 <script src="javascript/main.js"></script>
+<script>
+const button = document.getElementById("secret-btn");
+const jokeOutput = document.getElementById("joke-output");
+
+button.addEventListener("click", function () {
+  const name = document.getElementById("joke-name").value.trim().toLowerCase();
+  const email = document.getElementById("joke-email").value.trim().toLowerCase();
+  const message = document.getElementById("joke-message").value.trim().toLowerCase();
+
+  if (
+    name === "matape" &&
+    email === "admin@matapesecurity.com" &&
+    message === "unlock"
+  ) {
+    jokeOutput.textContent = "ACCESS GRANTED: Opening secure channel 😂";
+
+    const videoWindow = window.open("", "_blank", "width=800,height=500");
+
+    if (videoWindow) {
+      videoWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>ACCESS GRANTED</title>
+          <style>
+            body {
+              margin: 0;
+              background: #0b0f0b;
+              color: #39ff14;
+              font-family: "Courier New", monospace;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              height: 100vh;
+            }
+
+            iframe {
+              border: 2px solid #39ff14;
+              border-radius: 12px;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>YOU FOUND IT</h1>
+
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LdGai72Tt8Y?si=HAUUksfZiOn_J52j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </body>
+        </html>
+      `);
+
+      videoWindow.document.close();
+    }
+  } else {
+    jokeOutput.textContent = "Transmission rejected.";
+  }
+});
+</script>
 
 </body>
+<!--Name: matape Email: admin@matapesecurity.com Message: unlock-->
 </html>
