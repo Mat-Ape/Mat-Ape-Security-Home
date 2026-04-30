@@ -20,12 +20,12 @@
     <nav>
     <div class="nav-links">
         <a href="index.html">Index</a>
-        <a href="Me.html">Me</a>
+        <a href="me.html">Me</a>
         <a href="Health&Fitness.html" class="active">Health & Fitness</a>
-        <a href="Projects.html">Projects</a>
+        <a href="projects.html">Projects</a>
         <a href="News.html">News</a>
-        <a href="Achievements.html">Achievements</a>
-        <a href="Contact.html">Contact</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="contact.html">Contact</a>
     </div>
     </nav>
 
@@ -41,6 +41,7 @@
       <span>Focus: Strength + Conditioning</span>
       <span>Updated: Feb 16, 2026</span>
     </div>
+    <div id="workout-mixes-table"></div>
   </section>
 
 
@@ -81,8 +82,8 @@
     <h2>Philosophy</h2>
 
     <p class="hf-text">
-      I live for progression and achievement. I analyze every detail, eliminate obstacles,
-      and focus on success.
+      I train for resilience and longevity. I track what matters, eliminate noise,
+      and focus on repeatable systems that compound over time.
     </p>
 
     <ul class="hf-list">
@@ -130,6 +131,7 @@
     </div>
   </section>
 
+  
 
   <!-- PROGRESS -->
   <section class="hf-section">
@@ -173,22 +175,15 @@
       </div>
 
       <div>
-          <h3>Nutrition</h3>
-      <ul>
-        <li>Calories: <span id="terra-calories">NO DATA</span></li>
-        <li>Protein: <span id="terra-protein">NO DATA</span></li>
-        <li>Carbs: <span id="terra-carbs">NO DATA</span></li>
-        <li>Fat: <span id="terra-fat">NO DATA</span></li>
-      </ul>
-    </div>
+        <h3>Nutrition</h3>
+        <ul>
+          <li>BMR: 2,741</li>
+          <li>Protein: 274g</li>
+          <li>Carbs: 274g</li>
+          <li>Fat: 61g</li>
+        </ul>
+      </div>
 
-<section class="hf-section">
-  <h2>Connected Data</h2>
-  <p class="hf-text">Sync nutrition data from MyFitnessPal through Terra.</p>
-  <button type="button" id="terra-connect-btn">Connect MyFitnessPal</button>
-  <p class="hf-text" id="terra-status">Not connected</p>
-</section>
-        
       <div>
         <h3>Recovery</h3>
         <ul>
@@ -243,12 +238,11 @@
   <section class="hf-section">
     <h2>System Log</h2>
 
-    <div class="hf-log" id="terra-log">
-  <div class="log-entry">
-    <span class="date">2026-02-16</span>
-    <p>Pull Day — Rows + Pullups</p>
-  </div>
-</div>
+    <div class="hf-log">
+      <div class="log-entry">
+        <span class="date">2026-02-16</span>
+        <p>Pull Day — Rows + Pullups</p>
+      </div>
 
       <div class="log-entry">
         <span class="date">2026-02-14</span>
@@ -294,8 +288,60 @@
 <div class="custom-cursor"></div>
 <script src="javascript/main.js"></script>
 <script src="javascript/bmr.js"></script>
+<script>
+const workoutMixes = [
+  {
+    genre: "Hip-Hop",
+    mood: "High Energy",
+    mixName: "Hip-Hop Workout",
+    iframe: `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V94h0x34zqA?si=c3TZhudP0j7s00yM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+  },
+  {
+    genre: "EDM",
+    mood: "Cardio",
+    mixName: "EDM Power Mix",
+    iframe: `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DmStNF35o1w?si=qU-OEywQLkJ4pCN2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+  },
+  {
+    genre: "Rock",
+    mood: "Strength",
+    mixName: "Rock Gym Mix",
+    iframe: `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oFfN7dJrOmI?si=U15QpXJ9Ew_L7ei8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+  }
+];
 
-<script src="javascript/terra.js"></script>
-    
+const tableContainer = document.getElementById("workout-mixes-table");
+
+let tableHTML = `
+  <div class="workout-table-container">
+    <h2>Current Workout Mixes</h2>
+    <table class="workout-table">
+      <thead>
+        <tr>
+          <th>|Genre|</th>
+          <th>|Mood|</th>
+          <th>|Mix|</th>
+          <th>|Play|</th>
+        </tr>
+      </thead>
+      <tbody>
+`;
+
+workoutMixes.forEach(mix => {
+  tableHTML += `
+    <tr>
+      <td>${mix.genre}</td>
+      <td>${mix.mood}</td>
+      <td>${mix.mixName}</td>
+      <td>${mix.iframe}</td>
+    </tr>
+  `;
+});
+
+tableHTML += `</tbody></table></div>`;
+
+tableContainer.innerHTML = tableHTML;
+</script>
+
 </body>
 </html>
