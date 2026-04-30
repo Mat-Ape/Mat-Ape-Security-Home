@@ -1,5 +1,67 @@
+/*
+====================================================
+BMR CALCULATOR SCRIPT
+====================================================
+
+BMR = Basal Metabolic Rate
+
+This calculates how many calories your body burns
+per day at COMPLETE REST.
+
+Example:
+Even if you stayed in bed all day, your body still
+burns calories for:
+
+- breathing
+- heart function
+- brain activity
+- digestion
+- temperature regulation
+
+This uses the Mifflin-St Jeor Equation,
+which is one of the most commonly used formulas.
+
+====================================================
+STEP 1: Wait for the page to fully load
+====================================================
+*/
+
 document.addEventListener("DOMContentLoaded", () => {
+
+ /*
+  We wait for "DOMContentLoaded" so JavaScript does
+  not try to grab HTML elements before they exist.
+
+  Without this:
+  JS may run too early and break.
+
+  Example:
+  If JS loads before the button exists,
+  getElementById() returns null.
+  */
+
+  /*
+  ====================================================
+  STEP 2: Find the Calculate Button
+  ====================================================
+  */
+  
   const bmrButton = document.getElementById("bmr-calc-btn");
+
+   /*
+  This grabs:
+
+  <button id="bmr-calc-btn">
+
+  and stores it in the variable:
+  bmrButton
+  */
+
+  /*
+  ====================================================
+  STEP 3: Safety Check
+  ====================================================
+  */
 
   if (!bmrButton) return;
 
