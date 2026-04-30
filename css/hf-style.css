@@ -239,6 +239,47 @@ h1, h2, h3 {
   color: #888;
 }
 
+/* ===== Workout Mixes ===== */
+.workout-table-container {
+  margin-top: 40px;
+  padding: 24px;
+  border-radius: 14px;
+  background: rgba(57, 255, 20, 0.06);
+  border: 1px solid rgba(57, 255, 20, 0.12);
+}
+
+.workout-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.workout-table th {
+  color: #39FF14;
+  padding: 12px;
+  border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+  font-size: 0.9rem;
+}
+
+.workout-table td {
+  padding: 12px;
+  text-align: center;
+  color: #C8C8C8;
+}
+
+.workout-table tr {
+  border-bottom: 1px solid rgba(57, 255, 20, 0.08);
+}
+
+.workout-table tr:hover {
+  background: rgba(57, 255, 20, 0.05);
+}
+
+.workout-table iframe {
+  border-radius: 6px;
+  border: 1px solid rgba(57, 255, 20, 0.2);
+}
+
 @media (max-width: 768px) {
   .bmr-calculator {
     grid-template-columns: 1fr;
